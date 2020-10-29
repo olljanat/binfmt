@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.1-experimental
-ARG QEMU_VERSION=v5.0.0
+ARG QEMU_VERSION=v5.1.0
 ARG QEMU_REPO=https://github.com/qemu/qemu
 
 FROM --platform=$BUILDPLATFORM debian:buster AS src
@@ -34,6 +34,7 @@ RUN --mount=target=./install-scripts,src=scripts \
 
 FROM qemu AS base-amd64
 FROM qemu AS base-arm64
+FROM qemu AS base-mips64el
 FROM qemu AS base-ppc64le
 FROM qemu AS base-s390x
 FROM qemu AS base-armv7

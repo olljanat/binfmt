@@ -10,6 +10,7 @@ echo $status | jq .supported | grep linux/arm64
 echo $status | jq .supported | grep linux/amd64
 echo $status | jq .supported | grep linux/arm/v7
 echo $status | jq .supported | grep linux/arm/v6
+echo $status | jq .supported | grep linux/mips64el
 echo $status | jq .supported | grep linux/riscv64
 echo $status | jq .supported | grep linux/ppc64le
 echo $status | jq .supported | grep linux/s390x
@@ -29,6 +30,7 @@ status=$(docker run --rm --privileged tonistiigi/binfmt:test --uninstall aarch64
 
 if echo $status | jq .supported | grep linux/arm64; then exit 1; fi
 if echo $status | jq .supported | grep linux/riscv64; then exit 1; fi
+echo $status | jq .supported | grep linux/mips64el
 echo $status | jq .supported | grep linux/ppc64le
 echo $status | jq .supported | grep linux/arm/v7
 

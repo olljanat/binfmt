@@ -16,6 +16,9 @@ fi
 if [ "$arch" != "armv7l" ] && [ "$arch" != "armv6l" ] ; then
     QEMU_TARGETS="$QEMU_TARGETS arm-linux-user"
 fi
+if [ "$arch" != "mips64el" ]; then
+    QEMU_TARGETS="$QEMU_TARGETS mips64el-linux-user"
+fi
 if [ "$arch" != "riscv64" ]; then
     QEMU_TARGETS="$QEMU_TARGETS riscv64-linux-user"
 fi

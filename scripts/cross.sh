@@ -53,6 +53,11 @@ case "$TARGETARCH" in
     PKG_PREFIX="arm-linux-gnueabi"
   fi
   ;;
+"mips64el")
+  OUT_ARCH="mips64el"
+  DPKG_ARCH="mips64el"
+  PKG_PREFIX="mips64el-linux-gnu"
+  ;;
 "riscv64")
   OUT_ARCH="riscv64"
   DPKG_ARCH="riscv64"
